@@ -44,8 +44,8 @@ def filedownload(df, cobrador_exclusivos, empresa_exclusivos):
 
 if uploaded_file and uploaded_file2:
   if st.button("Processar"):
-    firm = pd.read_excel(uploaded_file)
-    collector = pd.read_excel(uploaded_file2)
+    ## ler arquivos de excel com pandas
+    firm, collector = pd.read_excel(uploaded_file), pd.read_excel(uploaded_file2)
     new_df, cobrador_exclusivos, empresa_exclusivos = data_process(firm, collector)
     st.subheader("Resultado análise")
     st.dataframe(new_df)
