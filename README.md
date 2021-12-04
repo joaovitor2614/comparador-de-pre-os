@@ -16,7 +16,7 @@ Primeiro você deve fazer upload da planilhas xlsx da empresa empregadora ( aque
 <img src="./imgs/upload.png" />
 
 Depois de clicar no botão um output como o de baixo aparecerá:
-<img src="./imgs/output.png" />
+
 
 Só aparecerão no resultado final dados que estiverem em ambas planilhas, dados singulares de cada planilha serão separado e ficarão disponíveis para visualização e download.
 
