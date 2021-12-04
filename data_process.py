@@ -19,9 +19,12 @@ def data_process(df_firm, df_collector):
         return names_list, cobrador_names_list, list_empresa, list_cobrador
 
     names_list, cobrador_names_list, list_empresa, list_cobrador = dfs_to_list(firmData, collectorData)
-    ## retornar nomes exclusivos de cada df
-    new_names_list, cobrador_exclusivos, empresa_exclusivos = check_names(names_list, list_cobrador, list_empresa, cobrador_names_list)
-    print(cobrador_exclusivos)
+    for i in range(len(names_list)):
+        if names_list[i] not in cobrador_names_list:
+           print('ras')
+           names_list.remove(names_list[i])
+    
+
     def get_items_list(nomes, empresa, cobrador):
         new_list = list()
         for x in range(len(nomes)):
@@ -56,6 +59,9 @@ def data_process(df_firm, df_collector):
     def checked_list_to_df(checked):
         new_df = pd.DataFrame(checked, columns=['NOME DO PACIENTE', 'DIF-PREÇO TOTAL', 'DIF-ATENDIMENTOS', 'DIF-VALOR ATEND'])
         return new_df
-
+    ## retornar nomes exclusivos de cada df
+    new_names_list, cobrador_exclusivos, empresa_exclusivos = check_names(names_list, list_cobrador, list_empresa, cobrador_names_list)
     new_df = checked_list_to_df(checked_list)
-    return new_df
+    cobrador_exclusivos = pd.DataFrame(cobrador_exclusivos, columns=['NOME DO PACIENTE', 'DIF-PREÇO TOTAL', 'DIF-ATENDIMENTOS', 'DIF-VALOR ATEND'])
+    empresa_exclusivos = pd.DataFrame(empresa_exclusivos, columns=['NOME DO PACIENTE', 'DIF-PREÇO TOTAL', 'DIF-ATENDIMENTOS', 'DIF-VALOR ATEND'])
+    return new_df, cobrador_exclusivos, empresa_exclusivos

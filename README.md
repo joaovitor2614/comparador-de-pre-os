@@ -13,10 +13,12 @@ Exceto a coluna 'CODIGO PACIENTE', todas as colunas são necessárias e devem es
 
 ## Como usar
 Primeiro você deve fazer upload da planilhas xlsx da empresa empregadora ( aquela que tem os dados corretos ), e em baixo em Planilha 2 você deve fazer upload da empresa terceirizada com os dados que precisam serem chequados.
-<img src="upload.png" />
+<img src="./imgs/upload.png" />
 
 Depois de clicar no botão um output como o de baixo aparecerá:
-<img src="output.png" />
+<img src="./imgs/output.png" />
+
+Só aparecerão no resultado final dados que estiverem em ambas planilhas, dados singulares de cada planilha serão separado e ficarão disponíveis para visualização e download.
 
 # Tecnologias
 - Python
