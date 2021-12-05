@@ -20,23 +20,23 @@ uploaded_file2 = st.file_uploader("Cobrador", type=['xlsx'])
 
 
 def filedownload(df, cobrador_exclusivos, empresa_exclusivos):
-  df_xlsx = to_excel(df)
+  df_xlsx, df_cobrador_exclusivos, df_empresa_exclusivos = to_excel(df), to_excel(cobrador_exclusivos), to_excel(empresa_exclusivos) 
+  col1, col2, col3 = st.columns([1,1,1])
+  with col1:
+    
+      st.download_button(label='Resultado', data=df_xlsx , file_name= 'resultado.xlsx')
+  with col2:
+     st.download_button(label='Items restantes - empresa', data=df_empresa_exclusivos, file_name= 'empresa-restantes.xlsx')
+  with col3:
+     st.download_button(label='Items restantes - cobrador', data=df_cobrador_exclusivos, file_name= 'cobrador-restantes.xlsx')
 
-  df_cobrador_exclusivos = to_excel(cobrador_exclusivos)
-  df_empresa_exclusivos = to_excel(empresa_exclusivos)
+
   
 
 
 
-  st.download_button(label='Resultado',
-                                data=df_xlsx ,
-                                file_name= 'resultado.xlsx')
-  st.download_button(label='items restantes - empresa',
-                                data=df_empresa_exclusivos,
-                                file_name= 'empresarestantes.xlsx')
-  st.download_button(label='Items restantes - cobrador',
-                                data=df_cobrador_exclusivos,
-                                file_name= 'cobradorrestantes.xlsx')
+ 
+ 
 
 
 
@@ -47,6 +47,8 @@ if uploaded_file and uploaded_file2:
     ## ler arquivos de excel com pandas
     firm, collector = pd.read_excel(uploaded_file), pd.read_excel(uploaded_file2)
     new_df, cobrador_exclusivos, empresa_exclusivos = data_process(firm, collector)
+
+
     st.subheader("Resultado análise")
     st.dataframe(new_df)
     st.subheader("Items restantes empresa")

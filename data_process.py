@@ -52,9 +52,6 @@ def data_process(df_firm, df_collector):
     checked_list = check_values(new_list)
     def checked_list_to_df(checked):
         new_df = pd.DataFrame(checked, columns=['NOME DO PACIENTE', 'DIF-PREÇO TOTAL', 'DIF-ATENDIMENTOS', 'DIF-VALOR ATEND'])
-        ## centrar valores do df
-
-        
         return new_df
     ## retornar nomes exclusivos de cada df
     

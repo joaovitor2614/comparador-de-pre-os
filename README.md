@@ -7,7 +7,7 @@ O agrupamento dos dados é feitos a partir dos nomes do clientes, por isso é ne
 Dados checkados: Quantidade total de atendimentos, preço dos atendimentos e valor total.
 
 ## Planilha modelo
-<img src="modelo.png" />
+<img src="'./imgs/modelo.png" />
 
 Exceto a coluna 'CODIGO PACIENTE', todas as colunas são necessárias e devem estar escritas exatamente da forma acima.
 
@@ -16,7 +16,7 @@ Primeiro você deve fazer upload da planilhas xlsx da empresa empregadora ( aque
 <img src="./imgs/upload.png" />
 
 Depois de clicar no botão um output como o de baixo aparecerá:
-
+<img src="'./imgs/output.png" />
 
 Só aparecerão no resultado final dados que estiverem em ambas planilhas, dados singulares de cada planilha serão separado e ficarão disponíveis para visualização e download.
 
