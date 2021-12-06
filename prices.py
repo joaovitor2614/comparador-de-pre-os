@@ -1,8 +1,9 @@
 import streamlit as st
 import pandas as pd
 import base64
+from clean_data import clean_data
 from data_process import data_process
-from to_excel import to_excel
+from to_excel import to_excel 
 
 
 st.title('Comparador de valores')
@@ -46,6 +47,7 @@ if uploaded_file and uploaded_file2:
   if st.button("Processar"):
     ## ler arquivos de excel com pandas
     firm, collector = pd.read_excel(uploaded_file), pd.read_excel(uploaded_file2)
+    firm = clean_data(firm)
     new_df, cobrador_exclusivos, empresa_exclusivos = data_process(firm, collector)
 
 

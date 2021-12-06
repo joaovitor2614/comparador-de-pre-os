@@ -3,6 +3,7 @@ from itertools import chain
 from check_names import check_names
 
 def data_process(df_firm, df_collector):
+  
     ## remover espaços vazios no nomes das colunas
     df_firm.columns, df_collector.columns  = df_firm.columns.str.strip(), df_collector.columns.str.strip()
     ## pegar colunas específicas
